@@ -57,7 +57,7 @@
 
     function deleteTodo(id) {
         console.log(id);
-        fetch('http://localhost:3000/todos/' + id, {
+        fetch('http://localhost:3000/api/todos/' + id, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json"
@@ -125,7 +125,7 @@
         resp.json().then(todoCallback);
     }
     function getData() {
-        fetch('http://localhost:3000/todos', {
+        fetch('http://localhost:3000/api/todos', {
             method: "GET"
         }).then(callback2)
     }
@@ -142,7 +142,7 @@
         var title = document.getElementById("title").value;
         var description = document.getElementById("description").value
                
-        fetch('http://localhost:3000/todos', {
+        fetch('http://localhost:3000/api/todos', {
             method: "POST", 
             body: JSON.stringify({
                 title: title,
